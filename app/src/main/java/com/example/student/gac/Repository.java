@@ -1,19 +1,17 @@
 package com.example.student.gac;
 
 
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 public class Repository {
-    private Repository()
-    {}
+
+    private Repository() {}
 
     private static Repository instance;
 
-    public static Repository getInstance()
-    {
-        if(instance == null)
-        {
+    public static Repository getInstance() {
+        if(instance == null) {
             instance = new Repository();
         }
         return instance;
@@ -21,16 +19,11 @@ public class Repository {
 
     private static MyDatabase database;
 
-    public MyDatabase getDatabase()
-    {
-        if(database == null)
-        {
-            database = Room.databaseBuilder(
-                    MyApplication.getInstance(),
-                    MyDatabase.class,
-                    "database"
-            ).build();
+    public MyDatabase getDatabase() {
+        if(database == null) {
+            database = Room.databaseBuilder(MyApplication.getInstance(), MyDatabase.class, "database").build();
         }
+
         return database;
     }
 }

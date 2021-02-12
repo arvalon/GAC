@@ -5,21 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context="com.example.student.gac.MainActivity">
 
     <fragment
         android:name="com.example.student.gac.Fragment1"
         android:id="@+id/fragment1"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <fragment
         android:name="com.example.student.gac.Fragment2"
         android:id="@+id/fragment2"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
