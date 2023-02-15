@@ -10,6 +10,10 @@ class UserObserver implements Observer<List<User>> {
 
     @Override
     public void onChanged(List<User> users) {
-        Log.d(TAG,"Количество пользователей: "+users.size());
+        Log.d(TAG,"UserObserver, Количество пользователей: "+users.size());
+
+        for (int i = 0; i < users.size(); i++){
+            Log.d(TAG, users.get(i).getFirstName()+" "+users.get(i).getLastName());
+        }
     }
 }
