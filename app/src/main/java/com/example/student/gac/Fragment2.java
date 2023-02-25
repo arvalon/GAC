@@ -19,7 +19,8 @@ import static com.example.student.gac.MainActivity.TAG;
 /** тут можно прочитать записи из базы */
 public class Fragment2 extends Fragment {
 
-    private MyViewModel model;
+    //private MyViewModel model;
+    private MyAndroidViewModel model;
 
     private UserObserver userObserver;
 
@@ -28,7 +29,8 @@ public class Fragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment2, container);
-        model = new ViewModelProvider(this).get(MyViewModel.class);
+        //model = new ViewModelProvider(this).get(MyViewModel.class);
+        model = new ViewModelProvider(this).get(MyAndroidViewModel.class);
 
         userObserver = new UserObserver();
 

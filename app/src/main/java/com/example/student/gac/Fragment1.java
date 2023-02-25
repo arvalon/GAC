@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelStore;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +16,8 @@ import android.widget.TextView;
 /** тут вводятся новые записи */
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
-    private MyViewModel model;
+    //private MyViewModel model;
+    private MyAndroidViewModel model;
 
     TextView text;
     EditText inn;
@@ -34,7 +37,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
 
         add.setOnClickListener(this);
 
-        model = new ViewModelProvider(this).get(MyViewModel.class);
+        model = new ViewModelProvider(this).get(MyAndroidViewModel.class);
 
         model.getText().observe(getViewLifecycleOwner(), text::setText);
 
