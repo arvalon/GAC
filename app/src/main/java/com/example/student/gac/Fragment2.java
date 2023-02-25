@@ -1,7 +1,7 @@
 package com.example.student.gac;
 
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,6 +16,7 @@ import java.util.List;
 
 import static com.example.student.gac.MainActivity.TAG;
 
+/** тут можно прочитать записи из базы */
 public class Fragment2 extends Fragment {
 
     private MyViewModel model;
@@ -27,7 +28,7 @@ public class Fragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment2, container);
-        model = ViewModelProviders.of(getActivity()).get(MyViewModel.class);
+        model = new ViewModelProvider(this).get(MyViewModel.class);
 
         userObserver = new UserObserver();
 
