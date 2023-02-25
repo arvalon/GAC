@@ -22,7 +22,8 @@ public class Fragment2 extends Fragment {
     //private MyViewModel model;
     private MyAndroidViewModel model;
 
-    private UserObserver userObserver;
+    /** зачем на уровне поля класса забыл */
+    //private UserObserver userObserver;
 
     @Nullable
     @Override
@@ -32,7 +33,7 @@ public class Fragment2 extends Fragment {
         //model = new ViewModelProvider(this).get(MyViewModel.class);
         model = new ViewModelProvider(this).get(MyAndroidViewModel.class);
 
-        userObserver = new UserObserver();
+        //userObserver = new UserObserver();
 
         //model.getAll().observe(getViewLifecycleOwner(), users -> Log.d(TAG,"Количество пользователей: "+users.size()));
         model.getAll().observe(getViewLifecycleOwner(), new UserObserver());
