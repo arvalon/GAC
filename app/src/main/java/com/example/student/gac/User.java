@@ -1,9 +1,9 @@
 package com.example.student.gac;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
-import android.support.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.annotation.NonNull;
 
 @Entity(tableName = "users")
 public class User {
@@ -19,18 +19,19 @@ public class User {
     private String lastName;
     private String dob;
 
-    public User(String inn, String firstName, String lastName, String dob) {
+    public User(@NonNull String inn, String firstName, String lastName, String dob) {
         this.inn = inn;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
     }
 
+    @NonNull
     public String getInn() {
         return inn;
     }
 
-    public void setInn(String inn) {
+    public void setInn(@NonNull String inn) {
         this.inn = inn;
     }
 
